@@ -11,13 +11,14 @@
     "format": "prettier --write \"src/**/*.ts\" \"__tests__/**/*.ts\"",
     "format:check": "prettier --check \"src/**/*.ts\" \"__tests__/**/*.ts\"",
     "type-check": "tsc --noEmit",
-    "package": "npm run type-check && npm run build && npm run test"
+    "package": "npm run type-check && npm run build && npm run test",
+    "prepare-release": "npm run build && git add dist/"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/nayandas69/auto-deploy-extreme.git"
   },
-  "keywords": ["github-actions", "deployment", "docker", "kubernetes", "serverless", "automation", "ci-cd"],
+  "keywords": ["github-auto-deploy-extremes", "deployment", "docker", "kubernetes", "serverless", "automation", "ci-cd"],
   "author": "nayandas69",
   "license": "MIT",
   "bugs": {
