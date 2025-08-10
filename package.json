@@ -1,0 +1,43 @@
+{
+  "name": "auto-deploy-extreme",
+  "version": "1.0.0",
+  "description": "Production-ready deployment automation with Docker, Kubernetes, and Serverless support",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "ncc build src/main.ts -o dist --source-map --license licenses.txt",
+    "test": "vitest --run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest --coverage --run",
+    "format": "prettier --write \"src/**/*.ts\" \"__tests__/**/*.ts\"",
+    "format:check": "prettier --check \"src/**/*.ts\" \"__tests__/**/*.ts\"",
+    "type-check": "tsc --noEmit",
+    "package": "npm run type-check && npm run build && npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nayandas69/auto-deploy-extreme.git"
+  },
+  "keywords": ["github-actions", "deployment", "docker", "kubernetes", "serverless", "automation", "ci-cd"],
+  "author": "nayandas69",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nayandas69/auto-deploy-extreme/issues"
+  },
+  "homepage": "https://github.com/nayandas69/auto-deploy-extreme#readme",
+  "dependencies": {
+    "@actions/core": "^1.10.1",
+    "@actions/exec": "^1.1.1",
+    "@actions/github": "^6.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "@vercel/ncc": "^0.38.1",
+    "prettier": "^3.2.5",
+    "typescript": "^5.3.3",
+    "vitest": "^1.6.0",
+    "@vitest/coverage-v8": "^1.6.0"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}

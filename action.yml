@@ -1,0 +1,75 @@
+name: 'Auto Deploy Extreme'
+description: 'Production-ready deployment automation with Docker, Kubernetes, and Serverless support'
+author: 'nayandas69'
+branding:
+  icon: 'upload-cloud'
+  color: 'blue'
+
+inputs:
+  environment:
+    description: 'Target environment (e.g., staging, production)'
+    required: true
+  deployment_type:
+    description: 'Type of deployment (docker, kubernetes, serverless)'
+    required: true
+  app_name:
+    description: 'Name of the application being deployed'
+    required: true
+  docker_image:
+    description: 'Docker image to deploy (required for docker deployment)'
+    required: false
+  k8s_manifest:
+    description: 'Path to Kubernetes manifest file (required for kubernetes deployment)'
+    required: false
+  serverless_config:
+    description: 'Path to serverless configuration file (required for serverless deployment)'
+    required: false
+  health_check_url:
+    description: 'URL to perform health check after deployment'
+    required: false
+  health_check_timeout:
+    description: 'Health check timeout in seconds (default: 300)'
+    required: false
+    default: '300'
+  rollback_on_failure:
+    description: 'Whether to rollback on deployment failure'
+    required: false
+    default: 'true'
+  notification_webhook:
+    description: 'Webhook URL for deployment notifications'
+    required: false
+  slack_token:
+    description: 'Slack bot token for notifications'
+    required: false
+  slack_channel:
+    description: 'Slack channel for notifications'
+    required: false
+  aws_region:
+    description: 'AWS region for serverless deployment'
+    required: false
+  aws_access_key_id:
+    description: 'AWS access key ID'
+    required: false
+  aws_secret_access_key:
+    description: 'AWS secret access key'
+    required: false
+  github_token:
+    description: 'GitHub token for API access'
+    required: true
+    default: ${{ github.token }}
+
+outputs:
+  deployment_id:
+    description: 'Unique identifier for this deployment'
+  deployment_url:
+    description: 'URL where the application is deployed'
+  deployment_status:
+    description: 'Status of the deployment (success/failed)'
+  deployment_time:
+    description: 'Timestamp when deployment completed'
+  error_message:
+    description: 'Error message if deployment failed'
+
+runs:
+  using: 'node20'
+  main: 'dist/index.js'

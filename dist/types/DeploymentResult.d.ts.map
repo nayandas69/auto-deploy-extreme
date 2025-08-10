@@ -1,0 +1,1 @@
+{"version":3,"file":"DeploymentResult.d.ts","sourceRoot":"","sources":["file:///workspaces/auto-deploy-extreme/src/types/DeploymentResult.ts"],"names":[],"mappings":"AAAA,MAAM,WAAW,gBAAgB;IAC/B,OAAO,EAAE,OAAO,CAAC;IACjB,YAAY,EAAE,MAAM,CAAC;IACrB,aAAa,EAAE,MAAM,CAAC;IACtB,KAAK,CAAC,EAAE,MAAM,CAAC;IACf,aAAa,CAAC,EAAE,MAAM,CAAC;CACxB"}
